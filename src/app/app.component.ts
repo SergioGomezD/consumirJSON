@@ -7,12 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  articulos=null;
+  articulos:any={};
 
   constructor(private http: HttpClient){}
 
   ngOnInit(){
-    this.http.get("https://www.datos.gov.co/resource/ewej-2idm.json")
+    this.http.get("https://www.datos.gov.co/resource/6he3-5m6n.json")
     .subscribe(
       result => {
         this.articulos = result;
