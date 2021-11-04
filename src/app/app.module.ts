@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { ListaComponent } from './lista/lista.component';
 
 import {HttpClientModule} from '@angular/common/http';
-import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -15,8 +14,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    NgxPaginationModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

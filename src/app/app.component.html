@@ -15,7 +15,7 @@
       </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of consumo.items | paginate: { itemsPerPage: 15, currentPage: page } ">
+    <tr *ngFor="let item of consumo.items  ">
       <td>{{item.no}}</td>
       <td>{{item.c_digo}}</td>
       <td>{{item.nombre}}</td>
@@ -28,6 +28,5 @@
     </tr>
   </tbody>
   </table>
-  <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
 </div>
 <ng-template #espera>Esperando Datos...</ng-template>
