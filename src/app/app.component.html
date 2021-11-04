@@ -1,6 +1,6 @@
 
 
-<div *ngIf="items!=null;else espera" class="container">
+<div *ngIf="consumo.items!=null;else espera" class="container">
   <h2>Directorio Establecimientos Educativos Oficiales y Privados de Past</h2>
   <table class="table table-dark table-striped">
     <thead>
@@ -15,7 +15,7 @@
       </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of items">
+    <tr *ngFor="let item of consumo.items | paginate: { itemsPerPage: 15, currentPage: page } ">
       <td>{{item.no}}</td>
       <td>{{item.c_digo}}</td>
       <td>{{item.nombre}}</td>
@@ -24,8 +24,10 @@
       <td>{{item.tel_fono}}</td>
       <td>{{item.correo_electr_nico}}</td>
 
+
     </tr>
   </tbody>
   </table>
+  <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
 </div>
 <ng-template #espera>Esperando Datos...</ng-template>
